@@ -28,8 +28,8 @@ func helloSergei(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	router := mux.NewRouter()
-	router.HandleFunc("/hello", helloLink)
-	router.HandleFunc("/hello/{id}"...???)
+	router.HandleFunc("/hello", helloLink).Methods("GET")
+	router.HandleFunc("/hello/{id}", helloSergei).Methods("GET")
 	http.ListenAndServe(":8081", router)
 
 	addr := ":8081"
