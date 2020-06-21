@@ -1,8 +1,8 @@
 # go-prep
 Interview preparation tasks
+- Win10, go 1.14.4 
 
 Steps:
-Win10, go 1.14.4 
 1. go mod init github.com/monkrus/go-prep.git
 
 2. Create basic web server with net/http
@@ -12,9 +12,11 @@ Win10, go 1.14.4
 
 4. Run `go get -u github.com/gorilla/mux` 
 
+5. Replace `net/http` with `Gorilla/Mux` 
+
+6. 
 
 
-- Перепиши все на Gorilla/Mux (это просто самый популярный шаблонизатор, я с ним работал на уроке)
 
 - Далее, создай параметр запроса "name", чтобы в зависимости от твоего параметра текст менялся, например
 /hello?name=sergei
