@@ -33,9 +33,18 @@ func main() {
 		http.ServeFile(w, r, "./sergei.html")
 	})
 	router.HandleFunc("/postform", func(w http.ResponseWriter, r *http.Request) {
+		//CHOOSE ONE (BUT FIRST MORE AGILE)
+		//FIRST VARIANT
 		query, _ := url.ParseQuery(r.URL.RawQuery)
 		if value, ok := query["name"]; ok {
 			fmt.Fprintf(w, "Name: %s", value[0])
+		} else {
+			fmt.Fprintf(w, "Oh, i don't know your name, stranger")
+		}
+		//SECOND VARIANT
+		query2 := r.URL.Query().Get("name")
+		if query2 != "" {
+			fmt.Fprintf(w, "Name: %s", query2)
 		} else {
 			fmt.Fprintf(w, "Oh, i don't know your name, stranger")
 		}
