@@ -26,9 +26,7 @@ func helloLink(w http.ResponseWriter, r *http.Request) {
 func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/hello", helloLink).Methods("GET")
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "sergei.html")
-	})
+	
 	http.HandleFunc("/postform", func(w http.ResponseWriter, r *http.Request) {
 		name := r.FormValue("username")
 		fmt.Fprintf(w, "Name: %s", name)
