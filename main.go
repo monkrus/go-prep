@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -21,17 +20,16 @@ func main() {
 
 func helloLink(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<b>Hello World</b>")
-}
-func helloSergei(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "<b>Hello Sergei</b>")
+
 }
 
 func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/hello", helloLink).Methods("GET")
-	router.HandleFunc("/hello/{id}", helloSergei).Methods("GET")
 	http.ListenAndServe(":8081", router)
+	http.HandleFunc("/sergei", func(w http.ResponseWriter, r *http.Request) {
+		name := r.URL.Query().Get("name")
+		fmt.Fprintf(w, "Name: %s", name)
+	})
 
-	addr := ":8081"
-	log.Fatal(http.ListenAndServe(addr, nil))
 }
