@@ -14,13 +14,9 @@ Steps:
 
 5. Replace `net/http` with `Gorilla/Mux` 
 
-6. 
+6. Create a query parameter `name` 
 
 
-
-- Далее, создай параметр запроса "name", чтобы в зависимости от твоего параметра текст менялся, например
-/hello?name=sergei
-<b>Hello, Sergei</b>
 
 - Потом создай ошибку, если заместо Нормального имени будет число
 Например : /hello?name=123
