@@ -31,6 +31,14 @@ func main() {
 	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		http.ServeFile(w, r, "./sergei.html")
 	})
+
+	/*
+		No, it's client-side solution (because "form" keyword).
+		Yes, it works, but keyword "form" binds it to HTML/JS "enviroment".
+		In future you can't create method for Flutter (e.g.) - there isn't native solution to get data from form value.
+
+		Would like to see server-side (such as API)
+	*/
 	router.HandleFunc("/postform", func(w http.ResponseWriter, r *http.Request) {
 		name := r.FormValue("username")
 		fmt.Fprintf(w, "Name: %s", name)
