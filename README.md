@@ -20,11 +20,9 @@ Steps:
 
 8. Install `go get github.com/anvie/port-scanner`
 
-9.
+8. Create an intentional error
 
-
--И еще одно задание, которое нужно будет сделать. А в аргументы своего приложения добавь настройку порта, на котором должен разворачиваться сервак 
-(./go_app.exe -port=8081, например)
+9. Write unit test for this method
 
 - Потом создай ошибку, если заместо Нормального имени будет число
 Например : /hello?name=123
