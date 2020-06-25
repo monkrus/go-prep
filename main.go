@@ -74,3 +74,12 @@ func main() {
 	  http.ListenAndServe(":8081", router)
          }
 
+
+		 //Attempt 3
+		 type typeError struct {
+			 code int
+		 }
+		 func (t typeError ) Error() string {
+			 if value = []int
+			 return fmt.Sprintf("error code %v, n.code")
+		 }
