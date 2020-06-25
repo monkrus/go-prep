@@ -37,6 +37,13 @@ func helloLink(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<b>Hello World</b>")
 
 }
+/* Attmpt 2
+func checkValue() ( value type, error) {
+	values, err := values.type()
+	if err!= nil {
+    return nil, errors.Wrap(err, "this is a wrong type")
+	}
+*/
 
 func main() {
 
@@ -59,7 +66,7 @@ func main() {
 		} else {
 			fmt.Fprintf(w, "Oh, I don't know your name, stranger")
 		}
-
+                // Attempt 1
 		if value = []int {
 		fmt.Fprintf(w, "Int type is not allowed")}
 		})
