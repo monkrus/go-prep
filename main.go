@@ -1,11 +1,13 @@
 package main
 
 import (
+	"errors"
 	"flag"
 	"fmt"
 	"log"
 	"net/http"
 	"net/url"
+	"os"
 
 	"github.com/gorilla/mux"
 )
@@ -57,6 +59,11 @@ func main() {
 		} else {
 			fmt.Fprintf(w, "Oh, I don't know your name, stranger")
 		}
-	})
-	http.ListenAndServe(":8081", router)
-}
+
+		if value = []int {
+		fmt.Fprintf(w, "Int type is not allowed")}
+		})
+		
+	  http.ListenAndServe(":8081", router)
+         }
+
