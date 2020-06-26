@@ -1,13 +1,13 @@
 package main
 
 import (
-	"errors"
+	
 	"flag"
 	"fmt"
 	"log"
 	"net/http"
 	"net/url"
-	"os"
+	
 
 	"github.com/gorilla/mux"
 )
@@ -37,13 +37,6 @@ func helloLink(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<b>Hello World</b>")
 
 }
-/* Attmpt 2
-func checkValue() ( value type, error) {
-	values, err := values.type()
-	if err!= nil {
-    return nil, errors.Wrap(err, "this is a wrong type")
-	}
-*/
 
 func main() {
 
@@ -66,20 +59,36 @@ func main() {
 		} else {
 			fmt.Fprintf(w, "Oh, I don't know your name, stranger")
 		}
-                // Attempt 1
-		if value = []int {
-		fmt.Fprintf(w, "Int type is not allowed")}
-		})
-		
+	})    
 	  http.ListenAndServe(":8081", router)
-         }
+	}
+	//Attempt 1
+	
+	/* func wrongType(value string)error {
+		if value ==  int {
+			return fmt.Errorf("int type is not allowed")
+		}
+	//Attempt 2
+
+	var  (
+		wrongType =  fmt.Errorf("int type is not allowed")
+	)
+		
+	func wrongType(value string) error {
+		if value ==  int {
+			return fmt.Errorf("int type is not allowed")
+		}
+	//	Attempt 3
+
+	var wrongType =errors.New("int type is not allowed")
+	func checkType(value string) (string, error){
+		if value == int {
+			return "", wrongType
+		}
+	}
 
 
-		 //Attempt 3
-		 type typeError struct {
-			 code int
-		 }
-		 func (t typeError ) Error() string {
-			 if value = []int
-			 return fmt.Sprintf("error code %v, n.code")
-		 }
+    */
+
+		}
+	}
