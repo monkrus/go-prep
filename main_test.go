@@ -1,19 +1,16 @@
-package main
 
-import (
-	"testing"
-)
 
-func TestInitFunc(t *testing.T) {
-	input := "init function testing"
-	expectedOutput := "init_function_testing"
+/*
+We are testing 3 functions:
 
-	actual, err := init(input)
-	if err != nil {
-		t.Errorf("expected no error, bit gpt %v", err)
+-init()
+Returns:
 
-	}
-	if actual != expectedOutput {
-		t.Errorf("expected output to be %s, but got %s", expectedOutput, actual)
-	}
-}
+-helloLink()
+Returns: 
+ResponseWriter(Hello World)
+
+-WrongType()
+Returns:
+error interface 
+*/
