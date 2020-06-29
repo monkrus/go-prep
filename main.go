@@ -1,13 +1,11 @@
 package main
 
 import (
-	
 	"flag"
 	"fmt"
 	"log"
 	"net/http"
 	"net/url"
-	
 
 	"github.com/gorilla/mux"
 )
@@ -40,7 +38,6 @@ func helloLink(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-	flag.Parse()
 	fmt.Println("env:", *env)
 	fmt.Println("port:", *port)
 
@@ -59,36 +56,34 @@ func main() {
 		} else {
 			fmt.Fprintf(w, "Oh, I don't know your name, stranger")
 		}
-	})    
-	  http.ListenAndServe(":8081", router)
+	})
+	http.ListenAndServe(":8081", router)
+}
+
+//Attempt 1
+
+/* func wrongType(value string)error {
+	if value ==  int {
+		return fmt.Errorf("int type is not allowed")
 	}
-	//Attempt 1
-	
-	/* func wrongType(value string)error {
-		if value ==  int {
-			return fmt.Errorf("int type is not allowed")
-		}
-	//Attempt 2
+//Attempt 2
 
-	var  (
-		wrongType =  fmt.Errorf("int type is not allowed")
-	)
-		
-	func wrongType(value string) error {
-		if value ==  int {
-			return fmt.Errorf("int type is not allowed")
-		}
-	//	Attempt 3
+var  (
+	wrongType =  fmt.Errorf("int type is not allowed")
+)
 
-	var wrongType =errors.New("int type is not allowed")
-	func checkType(value string) (string, error){
-		if value == int {
-			return "", wrongType
-		}
+func wrongType(value string) error {
+	if value ==  int {
+		return fmt.Errorf("int type is not allowed")
 	}
+//	Attempt 3
 
-
-    */
-
-		}
+var wrongType =errors.New("int type is not allowed")
+func checkType(value string) (string, error){
+	if value == int {
+		return "", wrongType
 	}
+}
+
+
+*/
