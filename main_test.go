@@ -13,7 +13,30 @@ func TestWrongType(t *testing.T) {
 	}
 }
 
-/* Attempt 2
+/*
+Attempt 2
+
+type AddResult struct {
+x        int
+y        int
+expected int
+}
+
+var addResults =[]AddResult {
+{1,2,3}, }
+
+func TestAdd(t *testing.T) {
+	for _, test :=range addResults {
+		result :=Add(test.x, test.y)
+		if (result !=test.expected){
+			t.Fatal("Expected result not given")
+		}
+	}
+}
+*/
+
+/* Attempt 3
+
 func TestExampleTestSuite(t *testing.T) {
 suite.Run(t, new(ExampleTestSuite))
 }
@@ -41,4 +64,27 @@ func TestWrongType(t *testing.T) {
 	}
 
 }
+*/
+/*
+Attempt 4
+
+func TestHttp(t *testing.T) {
+  //
+    handler := func(w http.ResponseWriter, r *http.Request) {
+    // here we write our expected response, in this case, we return a
+    // JSON string which is typical when dealing with REST APIs
+        io.WriteString(w, "{ \"status\": \"expected service response\"}")
+    }
+
+    req := httptest.NewRequest("GET", "https://tutorialedge.net", nil)
+    w := httptest.NewRecorder()
+    handler(w, req)
+
+    resp := w.Result()
+    body, _ := ioutil.ReadAll(resp.Body)
+    fmt.Println(resp.StatusCode)
+    fmt.Println(resp.Header.Get("Content-Type"))
+    fmt.Println(string(body))
+}
+
 */
