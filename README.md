@@ -24,3 +24,12 @@ Steps:
 
 9. Write unit test for essentional methods 
 
+- init 
+Returns port?
+- helloLink
+Returns w.ResponseWriter =>Hello World
+
+- WrongType
+Returns error
+condition 1: returns errors.New
+condition 2: returns nil

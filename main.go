@@ -30,9 +30,9 @@ var (
 
 func init() {
 	//env = flag.String("env", "development", "a string")
-	port = flag.Int("port", 8081, "an int")
-	flag.Parse()
-    fmt.Fprintln(flag.Parse())
+	port = flag.Int("port", 8081,"")
+	flag.Parse() 
+
 }
 
 func helloLink(w http.ResponseWriter, r *http.Request) {
