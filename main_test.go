@@ -2,19 +2,62 @@ package main
 
 import (
 	"testing"
+
+	"github.com/gorilla/mux"
 )
 
-//Attempt 1
 func TestWrongType(t *testing.T) {
-	result := WrongType(error)
-	expected := (nil)
+	result := nil
+	expected := error
 	if result != expected {
-		t.Errorf("TestWrongType() test returned an unexpected result: got %v want %v", result, expected)
+		t.Errorf("WrongType() test returned an unexpected result: got %v want %v", result, expected)
 	}
 }
 
+
+func TestInit(t *testing.T) {
+	result := error
+	expected := nil
+	if result != expected {
+		t.Errorf("init() test returned an unexpected result: got %v want %v", result, expected)
+	}
+}
+
+func TestHelloLink(t *testing.T) {
+	result := error
+	expected := nil
+	if result != expected {
+		t.Errorf("helloLink() test returned an unexpected result: got %v want %v", result, expected)
+	}
+}
+func TestHttp(t *testing.T) {
+	//
+	  router := mux.NewRouter() 
+	  {
+      io.WriteString(w, "{ /"hello": /"expected response/"}")
+	  }
+  
+	  router := httptest.NewRequest("GET", "http://localhost:8081/hello", nil)
+	  w := httptest.NewRecorder()
+	  router(w, req)
+  
+	  resp := w.Result()
+	  body, _ := ioutil.ReadAll(resp.Body)
+	  fmt.Println(resp.StatusCode)
+	  fmt.Println(resp.Header.Get("Content-Type"))
+	  fmt.Println(string(body))
+  }
+
 /*
-Attempt 2
+We are testing the following functions"
+-init
+-helloLink
+-wrongType
+- also testing HTTP reponse request
+
+*/
+/*
+OPTION 2
 
 type AddResult struct {
 x        int
@@ -35,7 +78,7 @@ func TestAdd(t *testing.T) {
 }
 */
 
-/* Attempt 3
+/* TEST SUITE
 
 func TestExampleTestSuite(t *testing.T) {
 suite.Run(t, new(ExampleTestSuite))
@@ -66,7 +109,7 @@ func TestWrongType(t *testing.T) {
 }
 */
 /*
-Attempt 4
+HTTP Testing
 
 func TestHttp(t *testing.T) {
   //
