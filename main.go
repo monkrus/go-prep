@@ -2,8 +2,8 @@ package main
 
 import (
 	"errors"
-	"flag"
 	"fmt"
+	"log"
 	"net/http"
 	"net/url"
 	"strconv"
@@ -28,9 +28,9 @@ var (
 )
 
 func init() {
-	env = flag.String("env", "development", "a string")
-	port = flag.Int("port", 8081, "an int")
-	flag.Parse() //You forgot this command!
+	//env = flag.String("env", "development", "a string")
+	//port = flag.Int("port", 8081, "an int")
+	//flag.Parse() //You forgot this command!
 }
 
 func helloLink(w http.ResponseWriter, r *http.Request) {
@@ -98,3 +98,4 @@ func checkType(value string) (string, error){
 		return "", wrongType
 	}
 }
+*/
