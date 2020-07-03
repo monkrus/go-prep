@@ -2,7 +2,6 @@ package main
 
 import (
 	"errors"
-	"flag"
 	"fmt"
 	"log"
 	"net/http"
@@ -24,14 +23,14 @@ func main() {
 */
 
 var (
-	//env  *string
+	env  *string
 	port *int
 )
 
 func init() {
 	//env = flag.String("env", "development", "a string")
-	port = flag.Int("port", 8081,"")
-	flag.Parse() 
+	//port = flag.Int("port", 8081, "an int")
+	//flag.Parse() 
 
 }
 
