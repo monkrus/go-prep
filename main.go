@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"flag"
 	"fmt"
 	"log"
 	"net/http"
@@ -22,18 +23,34 @@ func main() {
 }
 */
 
+
+
 var (
 	env  *string
 	port *int
 )
 
 func init() {
-	//env = flag.String("env", "development", "a string")
-	//port = flag.Int("port", 8081, "an int")
-	//flag.Parse() 
+// env = flag.String("env", "development", "a string")
+// port = flag.Int("port", 8081, "an int")
+// flag.Parse() 
 
 }
 
+func initTwo() {
+	env = flag.String("env", "development", "a string")
+	port = flag.Int("port", 8081, "an int")
+	flag.Parse() 
+}
+
+if value, ok := flag.Int(8081); ok {
+if initTwo(value[0]) != nil {
+fmt.Fprintf(w, WrongType(value[0]).Error())
+} else {
+fmt.Fprintf(w, "Wrong port, buddy...")
+}
+
+}
 func helloLink(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<b>Hello World</b>")
 
